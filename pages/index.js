@@ -13,12 +13,6 @@ function Link({ href, children }) {
 }
 
 export default function Home() {
-  const bgStyle =
-    typeof window !== "undefined" &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "bg-[#1e1e1e] text-[#f1f1f1] shadow-lg shadow-[#000000]/50"
-      : "bg-white text-[#1e1e1e]";
-
   return (
     <div className="grid h-screen">
       <Head>

@@ -1,6 +1,24 @@
 import Head from "next/head";
 
+function Prompt() {
+  return <span className="text-green-400">$</span>;
+}
+
+function Link({ href, children }) {
+  return (
+    <a href={href} className="decoration-blue-500 underline">
+      {children}
+    </a>
+  );
+}
+
 export default function Home() {
+  const bgStyle =
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "bg-[#1e1e1e] text-[#f1f1f1] shadow-lg shadow-[#000000]/50"
+      : "bg-white text-[#1e1e1e]";
+
   return (
     <div className="grid h-screen">
       <Head>
@@ -10,12 +28,21 @@ export default function Home() {
       </Head>
 
       <main className="place-self-center">
-        <h1 className="text-center">@janecakemaster</h1>
-        <div>
+        <h1 className="text-center text-3xl font-bold tracking-wide py-4">
+          @janecakemaster
+        </h1>
+        <div className={`font-mono rounded-md p-4 mx-auto ${bgStyle}`}>
           <p>
-            <code>
-              fullstack js/golang engineer from the dirty jerz living in az 🌵
-            </code>
+            <Prompt /> echo <span className="">$JANECAKEMASTER</span>
+          </p>
+          <p>
+            fullstack js and golang engineer from the dirty jerz 🗽 nyc, az
+            🌵...
+          </p>
+          <p>currently living in sf 🌉</p>
+          <p>
+            <Link href="https://github.com/janecakemaster">github</Link>{" "}
+            <Link href="https://linkedin.com/in/janecakemaster">linkedin</Link>{" "}
           </p>
         </div>
       </main>

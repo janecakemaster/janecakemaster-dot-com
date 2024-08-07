@@ -6,7 +6,7 @@ function Prompt() {
 
 function Link({ href, children }) {
   return (
-    <a href={href} className="decoration-blue-500 underline">
+    <a href={href} className="decoration-blue-500 underline hover:overline">
       {children}
     </a>
   );
@@ -33,7 +33,10 @@ export default function Home() {
         </h1>
         <div className={`font-mono rounded-md p-4 mx-auto ${bgStyle}`}>
           <p>
-            <Prompt /> echo <span className="">$JANECAKEMASTER</span>
+            <Prompt /> echo{" "}
+            <span className="decoration-fuchsia-400 decoration-dotted underline hover:overline">
+              $JANECAKEMASTER
+            </span>
           </p>
           <p>
             fullstack js and golang engineer from the dirty jerz 🗽 nyc, az
